@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <assemblyIdentity name="speedsheet, PublicKeyToken=a5d91a1ee2758d23" />
+  <loaderSettings generateLogFile="true" shadowCopyEnabled="false" privileges="user" configFileName="App.config" />
+</configuration>
