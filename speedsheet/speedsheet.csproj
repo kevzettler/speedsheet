@@ -39,25 +39,29 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="AddinExpress.MSO.2005" >
+    <Reference Include="AddinExpress.MSO.2005">
       <HintPath>C:\Program Files\Add-in Express\Add-in Express for .NET\Bin\AddinExpress.MSO.2005.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Interop.VBIDE.dll" >
+    <Reference Include="Interop.VBIDE.dll">
       <HintPath>Interops\Interop.VBIDE.dll</HintPath>
       <Private>True</Private>
     </Reference>
-	<Reference Include="Interop.Office.dll" >
+    <Reference Include="Interop.Office.dll">
       <HintPath>Interops\Interop.Office.dll</HintPath>
       <Private>True</Private>
     </Reference>
-	<Reference Include="Interop.Excel.dll" >
+    <Reference Include="Interop.Excel.dll">
       <HintPath>Interops\Interop.Excel.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>..\packages\WebSocketSharp.1.0.3-rc4\lib\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Loader\adxloader.dll.manifest" />
+    <None Include="packages.config" />
     <!--<None Include="speedsheet.snk" /> -->
   </ItemGroup>
   <ItemGroup>
