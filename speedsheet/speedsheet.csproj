@@ -77,4 +77,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddinModule.resx">
+      <DependentUpon>AddinModule.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
