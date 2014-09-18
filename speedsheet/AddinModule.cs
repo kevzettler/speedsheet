@@ -66,6 +66,17 @@ namespace speedsheet
             }
         }
 
+        private void adxRibbonButton1_OnClick(object sender, IRibbonControl control, bool pressed)
+        {
+          helloderp();
+        }
+
+        private void helloderp()
+        {
+ 	        throw new NotImplementedException();
+        }
+
+
     }
 }
 

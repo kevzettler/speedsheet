@@ -59,6 +59,7 @@
             this.adxRibbonButton1.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.adxRibbonButton1.Ribbons = AddinExpress.MSO.ADXRibbons.msrExcelWorkbook;
             this.adxRibbonButton1.Size = AddinExpress.MSO.ADXRibbonXControlSize.Large;
+            this.adxRibbonButton1.OnClick += new AddinExpress.MSO.ADXRibbonOnAction_EventHandler(this.adxRibbonButton1_OnClick);
             // 
             // imageList1
             // 
