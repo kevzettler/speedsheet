@@ -69,11 +69,12 @@ namespace speedsheet
         private void adxRibbonButton1_OnClick(object sender, IRibbonControl control, bool pressed)
         {
           int numberOfColumns = getColumnCount();
-          
+          MessageBox.Show(String.Format("WTF IS THIS {1}", numberOfColumns));
         }
 
         private int getColumnCount()
         {
+            Excel.Range selectedCellsRange = null;
             Excel.Range columnRange = null;
             int numberOfColumns = 0;
             try
