@@ -68,12 +68,38 @@ namespace speedsheet
 
         private void adxRibbonButton1_OnClick(object sender, IRibbonControl control, bool pressed)
         {
-          helloderp();
+          getSelectedCells();
         }
 
-        private void helloderp()
+        private void getSelectedCells()
         {
- 	        throw new NotImplementedException();
+            Excel.Range selectedCellsRange = null;
+            Excel.Range columnRange = null;
+            Excel.Range rowRange = null;
+            int numberOfColumns = 0;
+            int numberOfRows = 0;
+
+            try
+            {
+                if (ExcelApp.Selection is Excel.Range)
+                {
+                    selectedCellsRange = ExcelApp.Selection as Excel.Range;
+                    columnRange = selectedCellsRange.Columns;
+                    rowRange = selectedCellsRange.Rows;
+                    numberOfColumns = columnRange.Count;
+                    numberOfRows = rowRange.Count;
+                    MessageBox.Show(String.Format(
+                        "You've selected {0} columns and {1} rows. The selection address is {2}",
+                        numberOfColumns, numberOfRows, selectedCellsRange.Address));
+                }
+
+            }
+            finally
+            {
+                if (rowRange != null) Marshal.ReleaseComObject(rowRange);
+                if (columnRange != null) Marshal.ReleaseComObject(columnRange);
+                if (selectedCellsRange != null) Marshal.ReleaseComObject(selectedCellsRange);
+            }
         }
 
 
