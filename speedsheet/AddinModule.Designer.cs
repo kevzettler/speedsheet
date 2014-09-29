@@ -32,8 +32,8 @@
             this.speedSheetTab = new AddinExpress.MSO.ADXRibbonTab(this.components);
             this.adxRibbonGroup1 = new AddinExpress.MSO.ADXRibbonGroup(this.components);
             this.adxRibbonButton1 = new AddinExpress.MSO.ADXRibbonButton(this.components);
-            this.adxExcelEvents = new AddinExpress.MSO.ADXExcelAppEvents(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.adxExcelEvents = new AddinExpress.MSO.ADXExcelAppEvents(this.components);
             // 
             // speedSheetTab
             // 
