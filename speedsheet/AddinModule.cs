@@ -69,7 +69,8 @@ namespace speedsheet
         private void adxRibbonButton1_OnClick(object sender, IRibbonControl control, bool pressed)
         {
           int numberOfColumns = getColumnCount();
-          MessageBox.Show(String.Format("WTF IS THIS {0}", numberOfColumns));
+          Form derpForm = new Form1();
+          derpForm.ShowDialog();
         }
 
         private int getColumnCount()
