@@ -13,27 +13,43 @@ namespace speedsheet
 {
     public partial class ParamMapForm : Form
     {
-        public ParamMapForm()
+        public ParamMapForm(int cols)
         {
+            this.cols = cols;
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             //WebRequest request = WebRequest.Create("http://dumbsocket.herokuapp.com");
-            string response = "{props: ['cool', 'story', 'bro']}";
-            dynamic resOjb = JsonConvert.DeserializeObject(response);
-            Array props = resOjb.props;
-            int cols = 5;
-            for (int i = cols; i <= 5; i++)
+            string response = "['cool', 'story', 'bro']";
+            dynamic props = JsonConvert.DeserializeObject(response);
+            for (int i = 1; i <= this.cols; i++)
             {
                 Label new_label = new Label();
-                new_label.Text = "Param for Col #{i}";
                 ComboBox new_combo_box = new ComboBox();
+
+                new_label.Text = "Param for Col " + i;
+                new_label.Location = new Point(30, new_combo_box.Bottom + (i * 30));
+                new_label.AutoSize = true;
+
+                
                 new_combo_box.DataSource = props;
+                //new_combo_box.AutoCompleteMode = Suggest;
+                new_combo_box.Location = new Point(new_label.Width + 12, new_label.Top - 3);
+
                 this.Controls.Add(new_label);
                 this.Controls.Add(new_combo_box);
+
+                this.CenterToScreen();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public int cols { get; set; }
     }
 }
