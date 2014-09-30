@@ -69,7 +69,7 @@ namespace speedsheet
         private void adxRibbonButton1_OnClick(object sender, IRibbonControl control, bool pressed)
         {
           int numberOfColumns = getColumnCount();
-          Form derpForm = new Form1();
+          Form derpForm = new ParamMapForm();
           derpForm.ShowDialog();
         }
 
