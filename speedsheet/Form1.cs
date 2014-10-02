@@ -54,11 +54,13 @@ namespace speedsheet
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         public Excel.Range range { get; set; }
+
+        private void gobtn_click(object sender, EventArgs e)
+        {
+            this.Close();
+            //iterate over range and bind to websocket for selected param.
+        }
     }
 }
