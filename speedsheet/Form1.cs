@@ -13,9 +13,9 @@ namespace speedsheet
 {
     public partial class ParamMapForm : Form
     {
-        public ParamMapForm(int cols)
+        public ParamMapForm(Excel.Range cellRange)
         {
-            this.cols = cols;
+            this.range = cellRange;
             InitializeComponent();
         }
 
@@ -23,8 +23,11 @@ namespace speedsheet
         {
             //WebRequest request = WebRequest.Create("http://dumbsocket.herokuapp.com");
             string response = "['cool', 'story', 'bro']";
+
+            Excel.Range columnRange = this.range.Columns;
+            int cols = columnRange.Count;
             string[] props = JsonConvert.DeserializeObject<string[]>(response);
-            for (int i = 1; i <= this.cols; i++)
+            for (int i = 1; i <= cols; i++)
             {
                 Label new_label = new Label();
                 ComboBox new_combo_box = new ComboBox();
@@ -51,6 +54,11 @@ namespace speedsheet
             this.Close();
         }
 
-        public int cols { get; set; }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public Excel.Range range { get; set; }
     }
 }

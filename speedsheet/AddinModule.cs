@@ -68,32 +68,15 @@ namespace speedsheet
 
         private void adxRibbonButton1_OnClick(object sender, IRibbonControl control, bool pressed)
         {
-          int numberOfColumns = getColumnCount();
-          Form derpForm = new ParamMapForm(numberOfColumns);
+          Excel.Range selectedRange = null;
+          if (ExcelApp.Selection is Excel.Range)
+          {
+            selectedRange = ExcelApp.Selection as Excel.Range;
+          }
+          Form derpForm = new ParamMapForm(selectedRange);
           derpForm.ShowDialog();
         }
 
-        private int getColumnCount()
-        {
-            Excel.Range selectedCellsRange = null;
-            Excel.Range columnRange = null;
-            int numberOfColumns = 0;
-            try
-            {
-                if (ExcelApp.Selection is Excel.Range)
-                {
-                    selectedCellsRange = ExcelApp.Selection as Excel.Range;
-                    columnRange = selectedCellsRange.Columns;
-                    numberOfColumns = columnRange.Count;
-                }
-            }
-            finally
-            {
-                if (columnRange != null) Marshal.ReleaseComObject(columnRange);
-            }
-
-            return numberOfColumns;
-        }
 
         private void getSelectedCells()
         {
