@@ -23,7 +23,7 @@ namespace speedsheet
         {
             //WebRequest request = WebRequest.Create("http://dumbsocket.herokuapp.com");
             string response = "['cool', 'story', 'bro']";
-            dynamic props = JsonConvert.DeserializeObject(response);
+            string[] props = JsonConvert.DeserializeObject<string[]>(response);
             for (int i = 1; i <= this.cols; i++)
             {
                 Label new_label = new Label();
@@ -33,9 +33,10 @@ namespace speedsheet
                 new_label.Location = new Point(30, new_combo_box.Bottom + (i * 30));
                 new_label.AutoSize = true;
 
-                
-                new_combo_box.DataSource = props;
-                //new_combo_box.AutoCompleteMode = Suggest;
+                object props_clone = props.Clone();
+                new_combo_box.DataSource = props_clone;
+                new_combo_box.AutoCompleteSource = AutoCompleteSource.ListItems;
+                new_combo_box.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 new_combo_box.Location = new Point(new_label.Width + 12, new_label.Top - 3);
 
                 this.Controls.Add(new_label);
