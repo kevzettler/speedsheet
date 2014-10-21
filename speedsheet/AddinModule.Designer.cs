@@ -34,6 +34,7 @@
             this.adxRibbonButton1 = new AddinExpress.MSO.ADXRibbonButton(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.adxExcelEvents = new AddinExpress.MSO.ADXExcelAppEvents(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             // 
             // speedSheetTab
             // 
@@ -67,6 +68,16 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "rsz_1icons.jpg");
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(104, 24);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // AddinModule
             // 
             this.AddinName = "speedsheet";
@@ -80,6 +91,7 @@
         private AddinExpress.MSO.ADXRibbonButton adxRibbonButton1;
         private System.Windows.Forms.ImageList imageList1;
         private AddinExpress.MSO.ADXExcelAppEvents adxExcelEvents;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
